@@ -15,11 +15,9 @@ function addFiles(files) {
     if (files.length > 1){
         //ToDo: use bootstrap alerts
         alert('Currently only a single file can be transfered');
-        ga('send', 'event','alerts', 'addFile', 'multipleFiles', files.length);
     }
     userState.isSeeder = true;
     var file = files[0]; // FileList object
-    ga('send', 'event', 'files', 'addFile', 'fileSize', file.size);
     sharefestClient.prepareToReadFile(file.name, file.size);
     if(peer5.config.USE_FS)
         radio('filesystemInitiated').subscribe([function(){ //(event called from within prepareToReadFile())
@@ -40,7 +38,6 @@ function readFile(file){
         //TODO: use bootstrap alerts
         showErrorAlert('Could not add the file due to disk limitations.  <a target="_blank" href="/faq#spaceLimit2">why?</a>',true);
 //        alert('Currently only files under ' + maxFileSize + 'MB are allowed');
-        ga('send', 'event', 'alerts', 'addFile', 'fileTooBig', file.size);
         return;
     }
 

@@ -23,7 +23,6 @@
             this.socket.binaryType = "arraybuffer";
 
             this.socket.onclose = function (e) {
-                ga('send', 'event', 'errors', 'websocketClosed', '');
                 peer5.warn('WebSocket closed with error');
                 peer5.warn(e);
                 thi$.socketInitating = true;

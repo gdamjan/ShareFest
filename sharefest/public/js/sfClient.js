@@ -213,7 +213,6 @@
 
                     thi$.sendReport(true);
                     blockMap.saveLocally();
-                    ga('send', 'event', 'transfer', 'downloadFinished', 'fileSize', blockMap.fileSize);
                 }
             }, this]);
 
