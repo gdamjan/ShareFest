@@ -32,14 +32,6 @@ function showLink() {
 }
 
 function updateShareButtons() {
-    var url = document.location.href;
-//            var element = $('#addthis')[0];
-//            $(element).attr('addthis:url',url);
-    addthis.update('share', 'url', url);
-    addthis.update('share', 'title', "Sharefest");
-    addthis.url = url;
-    addthis.toolbox(".addthis_toolbox");
-    $('#addthis').show()
 }
 
 function onTextBoxClick(e) {
